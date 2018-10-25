@@ -1,0 +1,9 @@
+Views -> Shared -> _Layout.cshtml pantalla de inicio
+
+https://docs.microsoft.com/es-es/aspnet/mvc/overview/getting-started/introduction/getting-started
+
+
+link a proyecto ejemplo
+
+https://drive.google.com/open?id=1y-xFXciO1_ykNzq4VbPn1bODe_-gZOQF
+
