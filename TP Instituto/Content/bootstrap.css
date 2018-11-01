@@ -6754,4 +6754,10 @@ button.close {
     display: none !important;
   }
 }
+card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
 /*# sourceMappingURL=bootstrap.css.map */
