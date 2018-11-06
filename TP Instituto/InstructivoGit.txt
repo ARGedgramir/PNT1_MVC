@@ -1,0 +1,4 @@
+﻿git status -> muestra en rojo los archivos modificados a agregar y muestra en verde los archivos ya agregados listos para hacer el commit
+git add -A -> agrega todos los archivos en rojo y los deja listos para hacer el commit
+git commit -m "Descripción bien detallada de lo que se hizo" -> el commit deja los cambios listos junto con su detalle para que se suban al original en GitHub
+git push -> envía todo lo descrito en el commit al original en GitHub. Estar 100% convencido de lo que se va a pushear esté bien.
