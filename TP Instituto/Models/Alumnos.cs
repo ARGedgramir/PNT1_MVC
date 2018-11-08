@@ -11,14 +11,25 @@ namespace TP_Instituto.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Alumnos
     {
         public int Legajo { get; set; }
+        [DisplayName("Nombre")]
+        [Required(ErrorMessage = "Por favor ingrese nombre.")]
         public string Nombre { get; set; }
+        [DisplayName("Apellido")]
+        [Required(ErrorMessage = "Por favor ingrese apellido.")]
         public string Apellido { get; set; }
         public Nullable<System.DateTime> FecNac { get; set; }
+        [DisplayName("DNI")]
+        [Required(ErrorMessage = "Por favor ingrese DNI.")]
         public Nullable<int> DNI { get; set; }
+        [DisplayName("E-mail")]
+        [Required(ErrorMessage = "Por favor ingrese dirección de mail.")]
+        [EmailAddress(ErrorMessage = "Ingrese una dirección de mail válida.")]
         public string Mail { get; set; }
         public Nullable<int> Tel { get; set; }
         public Nullable<int> Antig { get; set; }
