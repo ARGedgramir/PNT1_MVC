@@ -23,6 +23,7 @@ namespace TP_Instituto.Models
         [DisplayName("Apellido")]
         [Required(ErrorMessage = "Por favor ingrese apellido.")]
         public string Apellido { get; set; }
+        [DisplayName("Fecha de nacimiento")]
         public Nullable<System.DateTime> FecNac { get; set; }
         [DisplayName("DNI")]
         [Required(ErrorMessage = "Por favor ingrese DNI.")]
@@ -31,7 +32,9 @@ namespace TP_Instituto.Models
         [Required(ErrorMessage = "Por favor ingrese dirección de mail.")]
         [EmailAddress(ErrorMessage = "Ingrese una dirección de mail válida.")]
         public string Mail { get; set; }
+        [DisplayName("Teléfono")]
         public Nullable<int> Tel { get; set; }
+        [DisplayName("Antigüedad")]
         public Nullable<int> Antig { get; set; }
     }
 }
