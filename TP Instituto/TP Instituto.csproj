@@ -165,73 +165,43 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\AlumnosController.cs" />
-    <Compile Include="Controllers\CursosController.cs" />
+    <Compile Include="Controllers\AlumnoController.cs" />
+    <Compile Include="Controllers\cursoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ProfesoresController.cs" />
+    <Compile Include="Controllers\ProfesorController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Alumnos.cs">
-      <DependentUpon>modAlumnos.tt</DependentUpon>
+    <Compile Include="Models\Alumno.cs">
+      <DependentUpon>ModelBaseInstituto.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Cursos.cs">
-      <DependentUpon>modCursos.tt</DependentUpon>
+    <Compile Include="Models\curso.cs">
+      <DependentUpon>ModelBaseInstituto.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\modAlumnos.Context.cs">
+    <Compile Include="Models\ModelBaseInstituto.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>modAlumnos.Context.tt</DependentUpon>
+      <DependentUpon>ModelBaseInstituto.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\modAlumnos.cs">
+    <Compile Include="Models\ModelBaseInstituto.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>modAlumnos.tt</DependentUpon>
+      <DependentUpon>ModelBaseInstituto.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\modAlumnos.Designer.cs">
+    <Compile Include="Models\ModelBaseInstituto.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>modAlumnos.edmx</DependentUpon>
+      <DependentUpon>ModelBaseInstituto.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\modCursos.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>modCursos.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\modCursos.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>modCursos.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\modCursos.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>modCursos.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\modProfesores.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>modProfesores.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\modProfesores.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>modProfesores.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\modProfesores.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>modProfesores.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Profesores.cs">
-      <DependentUpon>modProfesores.tt</DependentUpon>
+    <Compile Include="Models\Profesor.cs">
+      <DependentUpon>ModelBaseInstituto.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\BD1.mdf" />
-    <Content Include="App_Data\BD1_log.ldf">
-      <DependentUpon>BD1.mdf</DependentUpon>
+    <Content Include="App_Data\BaseInstituto.mdf" />
+    <Content Include="App_Data\BaseInstituto_log.ldf">
+      <DependentUpon>BaseInstituto.mdf</DependentUpon>
     </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -252,61 +222,27 @@
     <Content Include="Images\menu-07.jpg" />
     <Content Include="Images\menu-08.jpg" />
     <Content Include="Images\search.png" />
-    <Content Include="Models\modAlumnos.Context.tt">
+    <Content Include="Models\ModelBaseInstituto.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>modAlumnos.Context.cs</LastGenOutput>
-      <DependentUpon>modAlumnos.edmx</DependentUpon>
+      <DependentUpon>ModelBaseInstituto.edmx</DependentUpon>
+      <LastGenOutput>ModelBaseInstituto.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\modAlumnos.tt">
+    <Content Include="Models\ModelBaseInstituto.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>modAlumnos.edmx</DependentUpon>
-      <LastGenOutput>modAlumnos.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\modCursos.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>modCursos.edmx</DependentUpon>
-      <LastGenOutput>modCursos.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\modCursos.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>modCursos.edmx</DependentUpon>
-      <LastGenOutput>modCursos.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\modProfesores.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>modProfesores.edmx</DependentUpon>
-      <LastGenOutput>modProfesores.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\modProfesores.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>modProfesores.edmx</DependentUpon>
-      <LastGenOutput>modProfesores.cs</LastGenOutput>
+      <DependentUpon>ModelBaseInstituto.edmx</DependentUpon>
+      <LastGenOutput>ModelBaseInstituto.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <EntityDeploy Include="Models\modAlumnos.edmx">
+    <EntityDeploy Include="Models\ModelBaseInstituto.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>modAlumnos.Designer.cs</LastGenOutput>
+      <LastGenOutput>ModelBaseInstituto.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\modAlumnos.edmx.diagram">
-      <DependentUpon>modAlumnos.edmx</DependentUpon>
-    </Content>
-    <EntityDeploy Include="Models\modProfesores.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>modProfesores.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\modProfesores.edmx.diagram">
-      <DependentUpon>modProfesores.edmx</DependentUpon>
-    </Content>
-    <EntityDeploy Include="Models\modCursos.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>modCursos.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\modCursos.edmx.diagram">
-      <DependentUpon>modCursos.edmx</DependentUpon>
+    <Content Include="Models\ModelBaseInstituto.edmx.diagram">
+      <DependentUpon>ModelBaseInstituto.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -333,20 +269,21 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Alumnos\Create.cshtml" />
-    <Content Include="Views\Alumnos\Delete.cshtml" />
-    <Content Include="Views\Alumnos\Details.cshtml" />
-    <Content Include="Views\Alumnos\Edit.cshtml" />
-    <Content Include="Views\Alumnos\Index.cshtml" />
-    <Content Include="Views\Profesores\Create.cshtml" />
-    <Content Include="Views\Profesores\Delete.cshtml" />
-    <Content Include="Views\Profesores\Details.cshtml" />
-    <Content Include="Views\Profesores\Edit.cshtml" />
-    <Content Include="Views\Profesores\Index.cshtml" />
-    <Content Include="Views\Cursos\Index.cshtml" />
-    <Content Include="Views\Cursos\Create.cshtml" />
-    <Content Include="Views\Cursos\Edit.cshtml" />
-    <Content Include="Views\Cursos\Delete.cshtml" />
+    <Content Include="Views\Alumno\Create.cshtml" />
+    <Content Include="Views\Alumno\Delete.cshtml" />
+    <Content Include="Views\Alumno\Details.cshtml" />
+    <Content Include="Views\Alumno\Edit.cshtml" />
+    <Content Include="Views\Alumno\Index.cshtml" />
+    <Content Include="Views\Profesor\Create.cshtml" />
+    <Content Include="Views\Profesor\Delete.cshtml" />
+    <Content Include="Views\Profesor\Details.cshtml" />
+    <Content Include="Views\Profesor\Edit.cshtml" />
+    <Content Include="Views\Profesor\Index.cshtml" />
+    <Content Include="Views\curso\Create.cshtml" />
+    <Content Include="Views\curso\Delete.cshtml" />
+    <Content Include="Views\curso\Details.cshtml" />
+    <Content Include="Views\curso\Edit.cshtml" />
+    <Content Include="Views\curso\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
