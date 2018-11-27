@@ -65,6 +65,7 @@ namespace TP_Instituto.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+            ViewBag.Alumnos = db.Alumno.ToList();
             curso curso = db.curso.Find(id);
             if (curso == null)
             {

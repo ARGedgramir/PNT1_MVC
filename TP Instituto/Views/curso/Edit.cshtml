@@ -1,4 +1,5 @@
 ﻿@model TP_Instituto.Models.curso
+@using TP_Instituto.Models
 
 @{
     ViewBag.Title = "Edit";
@@ -10,7 +11,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>curso</h4>
         <hr />
@@ -25,9 +26,66 @@
             </div>
         </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+        <div class="row form-group">
+            <label class="control-label col-md-2">Alumnos</label>
+            <div class="col-md-3 alumno-container">
+
+                <div class="row form-group" data-alumno-id="0" style="display: none">
+                    <div class="col-md-12">
+
+                        <div class="row form-group" style="display: none">
+                            <div class="col-md-12">
+                                <input class="form-control" type="text" value="0" name="AlumnoLegajo" disabled />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <select class="form-control" id="CursoAlumno" name="AlumnoApellido" disabled>
+                                    @foreach (var alumno in (IEnumerable<Alumno>)ViewBag.Alumnos)
+                                    {
+                                        <option value="@alumno.Legajo">@alumno.Apellido</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+
+                        @foreach (var alumno in Model.Alumno)
+                        {
+                            <div class="row form-group" data-alumno-id="@alumno.Legajo">
+                                <div class="col-md-12">
+
+                                    <div class="row form-group" style="display: none">
+                                        <div class="col-md-12">
+                                            <input class="form-control" type="text" value="@alumno.Legajo" name="AlumnoLegajo" />
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-md-12">
+                                            <select class="form-control" id="CursoAlumno" name="AlumnoApellido">
+                                                @foreach (var alumno1 in (IEnumerable<Alumno>)ViewBag.Alumno)
+                                                {
+                                                    <option value="@alumno1.Legajo">@alumno1.Apellido</option>
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        }
+                        
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="btn btn-primary add-alum" onclick="addAlumno()">Agregar Alumno</div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Save" class="btn btn-default" />
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -39,4 +97,17 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+        function addAlumno() {
+            var $alumnosContainer = jQuery(".alumno-container");
+            var $alumnosContainer = $("[data-alumno-id=0]:first-child").clone();
+            $alumnosContainer.show();
+            $alumnosContainer.append($alumnosContainer);
+            $alumnosContainer.find("[disabled]").each(function () {
+                console.log(this);
+                $(this).prop("disabled", false).removeAttr("disabled");
+            });
+        }
+    </script>
 }
