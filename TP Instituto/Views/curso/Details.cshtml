@@ -18,6 +18,14 @@
             @Html.DisplayFor(model => model.nombrecurso)
         </dd>
 
+        <dt>Alumnos</dt>
+        <dd>
+            @foreach (var alumno in Model.Alumno)
+            {
+                <div>@alumno.Apellido></div>
+            }
+        </dd>
+
     </dl>
 </div>
 <p>

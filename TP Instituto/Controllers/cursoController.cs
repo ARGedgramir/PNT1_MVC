@@ -71,6 +71,7 @@ namespace TP_Instituto.Controllers
             {
                 return HttpNotFound();
             }
+            ViewData["Alumnos"] = db.Alumno.ToList();
             return View(curso);
         }
 
@@ -79,7 +80,7 @@ namespace TP_Instituto.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "idcurso,nombrecurso")] curso curso)
+        public ActionResult Edit([Bind(Include = "idcurso, nombrecurso, Alumno")] curso curso)
         {
             if (ModelState.IsValid)
             {
