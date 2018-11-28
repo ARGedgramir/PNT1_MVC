@@ -11,7 +11,7 @@ namespace TP_Instituto.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
     public partial class Profesor
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,8 +23,12 @@ namespace TP_Instituto.Models
         public int Legajo { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
-        public Nullable<System.DateTime> FecNac { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Fecha de Nacimiento")]
+        public DateTime FecNac { get; set; }
         public Nullable<int> DNI { get; set; }
+        [EmailAddress(ErrorMessage = "error")]
         public string Mail { get; set; }
         public Nullable<int> Tel { get; set; }
         public Nullable<int> Antig { get; set; }

@@ -72,6 +72,7 @@ namespace TP_Instituto.Controllers
                 return HttpNotFound();
             }
             ViewData["Alumnos"] = db.Alumno.ToList();
+            ViewData["Profesores"] = db.Profesor.ToList();
             return View(curso);
         }
 
