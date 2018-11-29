@@ -17,7 +17,8 @@ namespace TP_Instituto.Controllers
         // GET: curso
         public ActionResult Index()
         {
-            return View(db.curso.ToList());
+            
+                return View(db.curso.ToList());
         }
 
         // GET: curso/Details/5
@@ -89,6 +90,7 @@ namespace TP_Instituto.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
             return View(curso);
         }
 

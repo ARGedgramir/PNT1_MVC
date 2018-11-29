@@ -26,8 +26,9 @@
 
     @Html.DropDownListFor(model => model.Alumno, new SelectList((System.Collections.IEnumerable)ViewData["Alumnos"], "Legajo", "Apellido"), new { @class = "form-control" })
     @Html.DropDownListFor(model => model.Profesor, new SelectList((System.Collections.IEnumerable)ViewData["Profesores"], "Legajo", "Apellido"), new { @class = "form-control" }) 
-    @*Al hacer save tira una excepción en estas dos últimas líneas. No sabemos cómo hacer para pasar el dato recibido a la base de datos. No hay un campo en la tabla curso que almacene esos datos, están en las tablas intermedias y no sabemos cómo acceder a ellas desde el controlador o de la vista*@
-
+    @*Al hacer save tira una excepción en estas dos últimas líneas. No sabemos cómo hacer para pasar el dato recibido a la base de datos. 
+    No hay un campo en la tabla curso que almacene esos datos, están en las tablas intermedias y no sabemos cómo acceder a ellas desde el controlador o de la vista*@
+    
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" value="Save" class="btn btn-default" />
